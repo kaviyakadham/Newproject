@@ -1,0 +1,101 @@
+import java.util.Scanner;
+import java.lang.*;
+
+class StonePaperSciccor
+{
+    
+String a;
+String b="start";
+public String startOrExit()
+{
+    Scanner scan=new Scanner(System.in);
+    System.out.println("player kindly enter start or exit:");
+    a=scan.next();
+   // return a;
+    
+    if(a.equals(b))
+     {
+        player1Find();
+        player2Find();
+        compare();
+     }
+     else if(a.equals("exit"))
+     {  
+         System.out.println("you are exited from the game");
+        System.exit(0);
+     }
+     else{
+         System.out.println("player enter start or exit");
+         startOrExit();
+     }
+ return a;
+}
+String player1=new String();
+String player2=new String();
+
+public String player1Find()
+{
+    Scanner sc=new Scanner(System.in);
+    System.out.println("player1 guess enter either stone,paper or sciccor:");
+    player1=sc.next();
+    return player1;
+}
+public String player2Find()
+{
+    Scanner sc=new Scanner(System.in);
+    System.out.println("player2 guess enter either stone,paper,sciccor:");
+    player2=sc.next();
+    return player2;
+}
+
+public void compare()
+{
+    if(player1.equals("stone") && player2.equals("phttps://github.com/kaviyakadham/Newproject/blob/main/Game1.javaaper"))
+    {
+        System.out.println("player2 won the game!");
+    }
+    else if(player1.equals("paper") && player2.equals("stone"))
+    {
+         System.out.println("player1 won the game!"); 
+    }
+    else if(player1.equals("sciccor") && player2.equals("stone"))
+    {
+        System.out.println("player2 won the game!"); 
+    }
+    else if(player1.equals("stone") && player2.equals("sciccor"))
+    {
+        System.out.println("player1 won the game!"); 
+    }
+    else if(player1.equals("sciccor") && player2.equals("paper"))
+    {
+        System.out.println("player1 won the game!"); 
+    }
+    else if(player1.equals("paper") && player2.equals("sciccor"))
+    {
+        System.out.println("player2 won the game!"); 
+    }
+    else if(player1.equals(player2))
+    {
+        System.out.println("oops! the game ended in draw");
+    }
+    else{
+        System.exit(0);
+    }
+    
+}
+}
+
+public class Main
+{
+    public static void main (String[] args) 
+    {
+      StonePaperSciccor s1=new StonePaperSciccor();
+      s1.startOrExit();
+     // s1.player1Find();
+     // s1.player2Find();
+     // s1.compare();
+    }
+
+}
+ 
+
